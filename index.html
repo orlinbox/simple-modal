@@ -17,6 +17,10 @@
       margin: 0;
       background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAIBAMAAAA2IaO4AAAAD1BMVEUnJyceHh4vLy8rKysxMTFAKBbFAAAALUlEQVQI12NgEmJmYHA0VGBmEDAQYmEwYGBUZGBgMBJicGBWZGQQMRIyAosAADWPAqpWitOAAAAAAElFTkSuQmCC');
     }
+    .js-lightbox-open {
+      color: #fff;
+      text-align: center;
+    }
     ::moz-selection { background: transparent; }
     ::selection { background: transparent; }
   </style>
@@ -25,9 +29,14 @@
 </head>
 <body>
   <!-- SM HTML -->
-  HTML
+  <div class="js-lightbox">
+    <div class="js-lightbox-open button" tabindex="0">Open modal</div>
+    <div class="js-lightbox-content" aria-hidden="true" style="display:none">
+      <img src="img/sm1.jpg" alt="">
+    </div>
+  </div>
   <!-- SM JS -->
-  <script src="jquery-3.3.1.slim.min.js"></script>
+  <script src="jquery-3.3.1.min.js"></script>
   <script src="simple-modal.js"></script>
 </body>
 </html>

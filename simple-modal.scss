@@ -8,6 +8,53 @@ SM version 1.0
 
 /* Styles ------------------------------------------------------------------- */
 
-body {
-  background: grey;
+$space: 10px;
+$black: #000;
+$white: #fff;
+
+.lightbox {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($black, 0.33);
+  outline: 0 none !important;
+  z-index: 999;
+}
+
+.lightbox-close {
+  position: absolute;
+  right: $space*2.5;
+  top: $space*2.5;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  color: $black;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+$lightbox-space-big: $space*10;
+$lightbox-space-small: $space*5;
+
+.lightbox-wrapper {
+  box-sizing: border-box;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 90%;
+  max-height: 90%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: $lightbox-space-big;
+  background-color: $white;
+  border-radius: 3px;
+  box-shadow: 0 0 5px rgba($black, 0.33);
+}
+
+.lightbox-inner {
+  overflow: auto;
+  max-height: calc(90vh - #{$lightbox-space-big*2});
 }
