@@ -12,7 +12,7 @@ $space: 10px;
 $black: #000;
 $white: #fff;
 
-.lightbox {
+.sm {
   position: fixed;
   left: 0;
   top: 0;
@@ -23,7 +23,7 @@ $white: #fff;
   z-index: 999;
 }
 
-.lightbox-close {
+.sm-close {
   position: absolute;
   right: $space*2.5;
   top: $space*2.5;
@@ -35,10 +35,10 @@ $white: #fff;
   background-repeat: no-repeat;
 }
 
-$lightbox-space-big: $space*10;
-$lightbox-space-small: $space*5;
+$sm-space-big: $space*10;
+$sm-space-small: $space*5;
 
-.lightbox-wrapper {
+.sm-wrapper {
   box-sizing: border-box;
   position: relative;
   top: 50%;
@@ -48,13 +48,13 @@ $lightbox-space-small: $space*5;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
-  padding: $lightbox-space-big;
+  padding: $sm-space-big;
   background-color: $white;
   border-radius: 3px;
   box-shadow: 0 0 5px rgba($black, 0.33);
 }
 
-.lightbox-inner {
+.sm-inner {
   overflow: auto;
-  max-height: calc(90vh - #{$lightbox-space-big*2});
+  max-height: calc(90vh - #{$sm-space-big*2});
 }

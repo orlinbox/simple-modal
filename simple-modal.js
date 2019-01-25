@@ -12,55 +12,55 @@ SM version 1.0
 
 (function() {
   // open with mouse
-  $('.js-lightbox-open').click(function() {
-    var content = $('.js-lightbox-content', $(this).parents('.js-lightbox')).addClass('js-lightbox-placeholder').contents();
-    $(this).addClass('js-lightbox-opener');
-    createLightbox(content);
+  $('.js-sm-open').click(function() {
+    var content = $('.js-sm-content', $(this).parents('.js-sm')).addClass('js-sm-placeholder').contents();
+    $(this).addClass('js-sm-opener');
+    createsm(content);
   });
   // open with keyboard
-  $('.js-lightbox-open').on('keydown', function(e) {
+  $('.js-sm-open').on('keydown', function(e) {
     if (e.key == 'Enter') {
-      var content = $('.js-lightbox-content', $(this).parents('.js-lightbox')).addClass('js-lightbox-placeholder').contents();
-      $(this).addClass('js-lightbox-opener');
-      createLightbox(content);
+      var content = $('.js-sm-content', $(this).parents('.js-sm')).addClass('js-sm-placeholder').contents();
+      $(this).addClass('js-sm-opener');
+      createsm(content);
     }
   });
-  // open lightbox
-  function createLightbox(el) {
+  // open sm
+  function createsm(el) {
     // HTML
-    var lightboxHTML = '' +
-      '<div class="lightbox" tabindex="0">' +
-        '<div class="lightbox-wrapper">' +
-          '<div class="lightbox-close" tabindex="0" aria-label="Close modal"></div>' +
-          '<div class="lightbox-inner">' +
-            '<div class="lightbox-content"></div>' +
+    var smHTML = '' +
+      '<div class="sm" tabindex="0">' +
+        '<div class="sm-wrapper">' +
+          '<div class="sm-close" tabindex="0" aria-label="Close modal"></div>' +
+          '<div class="sm-inner">' +
+            '<div class="sm-content"></div>' +
           '</div>' +
         '</div>' +
       '</div>' +
     '';
     // append
-    $('body').append(lightboxHTML);
-    $('.lightbox-content').append(el);
+    $('body').append(smHTML);
+    $('.sm-content').append(el);
     // show
-    $('.lightbox').hide().fadeIn().focus();
+    $('.sm').hide().fadeIn().focus();
     // close with mouse
-    $('.lightbox-close').click(function() {
-      destroyLightbox(this);
+    $('.sm-close').click(function() {
+      destroysm(this);
     });
     // close with keyboard
-    $('.lightbox-close').on('keydown', function(e) {
+    $('.sm-close').on('keydown', function(e) {
       if (e.key == 'Enter') {
-        destroyLightbox(this);
+        destroysm(this);
       }
     });
   }
-  // close lightbox
-  function destroyLightbox(el) {
-    var content = $('.lightbox-content', $(el).parents('.lightbox')).contents();
-    $('.lightbox').fadeOut(function() {
-      $('.js-lightbox-placeholder').append(content).removeClass('js-lightbox-placeholder');
-      $('.js-lightbox-opener').removeClass('js-lightbox-opener').focus();
-      $('.lightbox').remove();
+  // close sm
+  function destroysm(el) {
+    var content = $('.sm-content', $(el).parents('.sm')).contents();
+    $('.sm').fadeOut(function() {
+      $('.js-sm-placeholder').append(content).removeClass('js-sm-placeholder');
+      $('.js-sm-opener').removeClass('js-sm-opener').focus();
+      $('.sm').remove();
     });
   }
 })();
