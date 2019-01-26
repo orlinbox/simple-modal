@@ -43,10 +43,12 @@ SM version 1.0
       });
     }
   });
+  // custom vh for mobile devices (due to address bar height)
+  function customvh() { document.documentElement.style.setProperty('--vh', window.innerHeight*0.01 + 'px'); }
   // open function
+  window.addEventListener('orientationchange', customvh);
   function opensm(el, label) {
-    // custom vh for mobile devices (due to address bar height)
-    document.documentElement.style.setProperty('--vh', window.innerHeight*0.01 + 'px');
+    customvh();
     // create HTML
     var smHTML = '' +
       '<div class="js-smsm" tabindex="0" role="region" aria-label="' + label + '">' +
