@@ -45,8 +45,16 @@ SM version 1.0
   });
   // custom vh for mobile devices (due to address bar height)
   function customvh() { document.documentElement.style.setProperty('--vh', window.innerHeight*0.01 + 'px'); }
+  // orientation change
+  window.addEventListener('orientationchange', function() {
+    customvh();
+    var afterOrientationChange = function() {
+      customvh();
+      window.removeEventListener('resize', afterOrientationChange);
+    };
+    window.addEventListener('resize', afterOrientationChange);
+  });
   // open function
-  window.addEventListener('orientationchange', customvh);
   function opensm(el, label) {
     customvh();
     // create HTML
