@@ -121,7 +121,7 @@ $sm-z-index: 999;
 
 .js-smsm-inner {
   max-height: calc(#{$sm-outer-height}vh - #{$sm-padding*2});
-  max-height: calc(var(--vh, 1vh)*#{$sm-outer-height} - #{$sm-padding*2});
+  max-height: calc(var(--smvh, 1vh)*#{$sm-outer-height} - #{$sm-padding*2});
   padding-right: $sm-padding;
   overflow: auto;
 }
