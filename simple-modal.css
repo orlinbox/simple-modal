@@ -93,6 +93,7 @@ SM version 1.0
 
 .js-smsm-inner {
   max-height: calc(90vh - 40px);
+  max-height: calc(var(--vh, 1vh)*90 - 40px);
   padding-right: 20px;
   overflow: auto;
 }

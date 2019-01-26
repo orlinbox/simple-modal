@@ -45,6 +45,8 @@ SM version 1.0
   });
   // open function
   function opensm(el, label) {
+    // custom vh for mobile devices (due to address bar height)
+    document.documentElement.style.setProperty('--vh', window.innerHeight*0.01 + 'px');
     // create HTML
     var smHTML = '' +
       '<div class="js-smsm" tabindex="0" role="region" aria-label="' + label + '">' +
