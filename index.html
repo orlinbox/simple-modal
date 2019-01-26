@@ -21,6 +21,7 @@
       color: #fff;
       text-align: center;
     }
+    .js-simple-modal { text-align: center; }
     ::moz-selection { background: transparent; }
     ::selection { background: transparent; }
   </style>
@@ -30,8 +31,8 @@
 <body>
   <!-- SM HTML -->
   <div class="js-simple-modal">
-    <div class="js-sm-open" tabindex="0" aria-label="Open modal">Open modal</div>
-    <div class="js-sm-content" data-label="Modal label" aria-hidden="true" style="display:none">
+    <span class="js-sm-open" tabindex="0" aria-label="Open modal" data-modal-label="Label for the modal">Open modal</span>
+    <div class="js-sm-content">
       <img src="img/sm1.jpg" alt="">
     </div>
   </div>
