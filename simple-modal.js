@@ -13,14 +13,14 @@ SM version 1.0
 (function() {
   // open with mouse
   $('.js-sm-open').click(function() {
-    var content = $('.js-sm-content', $(this).parents('.js-sm')).addClass('js-sm-placeholder').contents();
+    var content = $('.js-sm-content', $(this).parents('.js-simple-modal')).addClass('js-sm-placeholder').contents();
     $(this).addClass('js-sm-opener');
     createsm(content);
   });
   // open with keyboard
   $('.js-sm-open').on('keydown', function(e) {
     if (e.key == 'Enter') {
-      var content = $('.js-sm-content', $(this).parents('.js-sm')).addClass('js-sm-placeholder').contents();
+      var content = $('.js-sm-content', $(this).parents('.js-simple-modal')).addClass('js-sm-placeholder').contents();
       $(this).addClass('js-sm-opener');
       createsm(content);
     }
