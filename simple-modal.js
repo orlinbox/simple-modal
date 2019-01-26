@@ -31,9 +31,9 @@ SM version 1.0
       var content = $('.js-sm-content', $(this).parents('.js-simple-modal')).addClass('js-sm-placeholder').contents();
       opensm(content, $(this).addClass('js-sm-opener').attr('data-modal-label'));
       // focus
-      $('.sm').focus();
+      $('.js-smsm').focus();
       // close with keyboard
-      $('.sm-close').on('keydown', function(e) {
+      $('.js-smsm-close').on('keydown', function(e) {
         if (e.key == 'Enter') {
           // return focus
           $('.js-sm-opener').focus();
@@ -47,22 +47,22 @@ SM version 1.0
   function opensm(el, label) {
     // create HTML
     var smHTML = '' +
-      '<div class="sm" tabindex="0" role="region" aria-label="' + label + '">' +
-        '<div class="sm-wrapper">' +
-          '<div class="sm-close" tabindex="0" aria-label="Close modal"></div>' +
-          '<div class="sm-inner">' +
-            '<div class="sm-content"></div>' +
+      '<div class="js-smsm" tabindex="0" role="region" aria-label="' + label + '">' +
+        '<div class="js-smsm-wrapper">' +
+          '<div class="js-smsm-close" tabindex="0" aria-label="Close modal"></div>' +
+          '<div class="js-smsm-inner">' +
+            '<div class="js-smsm-content"></div>' +
           '</div>' +
         '</div>' +
       '</div>' +
     '';
     // append
     $('body').append(smHTML);
-    $('.sm-content').append(el);
+    $('.js-smsm-content').append(el);
     // show
-    $('.sm').hide().fadeIn();
+    $('.js-smsm').hide().fadeIn();
     // close with mouse
-    $('.sm-close').click(function() { closesm(); });
+    $('.js-smsm-close').click(function() { closesm(); });
     // close with keyboard
     $('body').on('keydown', function(e) {
       if (e.key == 'Escape') {
@@ -75,10 +75,10 @@ SM version 1.0
   }
   // close function
   function closesm() {
-    $('.sm').fadeOut(function() {
-      $('.js-sm-placeholder').append($('.sm-content').contents()).removeClass('js-sm-placeholder');
+    $('.js-smsm').fadeOut(function() {
+      $('.js-sm-placeholder').append($('.js-smsm-content').contents()).removeClass('js-sm-placeholder');
       $('.js-sm-opener').removeClass('js-sm-opener');
-      $('.sm').remove();
+      $('.js-smsm').remove();
     });
   }
 })();

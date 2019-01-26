@@ -18,8 +18,17 @@
       background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAIBAMAAAA2IaO4AAAAD1BMVEUnJyceHh4vLy8rKysxMTFAKBbFAAAALUlEQVQI12NgEmJmYHA0VGBmEDAQYmEwYGBUZGBgMBJicGBWZGQQMRIyAosAADWPAqpWitOAAAAAAElFTkSuQmCC');
     }
     .js-sm-open {
+      transition: all 0.25s;
       color: #fff;
       text-align: center;
+      cursor: pointer;
+    }
+    .js-sm-open:hover {
+      opacity: 0.66;
+    }
+    .demo img {
+      max-width: 100%;
+      height: auto;
     }
     .js-simple-modal { text-align: center; }
     ::moz-selection { background: transparent; }
@@ -31,9 +40,14 @@
 <body>
   <!-- SM HTML -->
   <div class="js-simple-modal">
-    <span class="js-sm-open" tabindex="0" aria-label="Open modal" data-modal-label="Label for the modal">Open modal</span>
+    <span class="js-sm-open" tabindex="0" aria-label="Open modal" data-modal-label="Label for the modal">Open modal &nbsp;&gt;</span>
     <div class="js-sm-content">
-      <img src="img/sm1.jpg" alt="">
+      <div class="demo">
+        <img src="img/sm1.jpg" alt="">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita illum illo pariatur accusamus nisi deserunt excepturi reprehenderit, obcaecati voluptatem quasi, id quam accusantium quae tempora maiores ratione quidem est magni!</p>
+        <p>Iusto quaerat at suscipit atque vel, similique mollitia culpa iste dicta fuga placeat ad laborum recusandae aliquam in repellendus aut assumenda dignissimos, rem perspiciatis ut modi odio. Ab, maxime, officia!</p>
+        <p>Beatae placeat consectetur quibusdam debitis tenetur blanditiis, perspiciatis. Velit eaque magnam molestiae quas veritatis, magni ea! Eaque in vero sapiente recusandae possimus quibusdam explicabo, voluptas doloremque sed, at quaerat nesciunt.</p>
+      </div>
     </div>
   </div>
   <!-- SM JS -->

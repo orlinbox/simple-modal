@@ -8,53 +8,130 @@ SM version 1.0
 
 /* Styles ------------------------------------------------------------------- */
 
-$space: 10px;
-$black: #000;
-$white: #fff;
+$sm-border-radius: 3px;
+$sm-x-size: 20px; /* half the size of the close button */
+$sm-x-weight: 4px;
 
-.sm {
+.js-smsm-wrapper {
+  border-radius: $sm-border-radius;
+  box-shadow: 0 0 10px rgba(#000, 0.1);
+
+  img { border-radius: $sm-border-radius; }
+}
+
+.js-smsm-close {
+  border-radius: $sm-border-radius;
+
+  &:before,
+  &:after {
+    transition: all 0.25s;
+    position: absolute;
+    content: " ";
+    left: $sm-x-size - $sm-x-weight/2;
+    top: $sm-x-size/2;
+    height: $sm-x-size;
+    width: $sm-x-weight;
+    border-radius: $sm-x-weight;
+    background-color: #000;
+  }
+
+  &:hover {
+    &:before,
+    &:after {
+      opacity: 0.66;
+    }
+  }
+}
+.js-smsm-close {
+  &:before { transform: rotate(-45deg); }
+  &:hover,
+  &:focus {
+    &:before {
+      transform: rotate(45deg);
+    }
+  }
+}
+.js-smsm-close {
+  &:after { transform: rotate(45deg); }
+  &:hover,
+  &:focus {
+    &:after {
+      transform: rotate(135deg);
+    }
+  }
+}
+
+.js-sm-open {
+  &:active,
+  &:focus {
+    outline-width: 2px;
+    outline-offset: 4px;
+  }
+}
+
+.js-smsm-close {
+  &:active,
+  &:focus {
+    outline-width: 2px;
+    outline-offset: -4px;
+  }
+}
+
+/* Config ------------------------------------------------------------------- */
+
+$sm-width: 600px;
+$sm-outer-width: 90; /* percentage */
+$sm-outer-height: 90; /* percentage */
+$sm-padding: 20px;
+$sm-bg-color: #fff;
+
+$sm-close-size: 40px;
+
+$sm-outer-bg-color: #fff;
+$sm-outer-bg-opacity: 0.2;
+
+$sm-z-index: 999;
+
+/* Simple modal ------------------------------------------------------------- */
+
+.js-smsm {
   position: fixed;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba($black, 0.33);
-  outline: 0 none !important;
-  z-index: 999;
+  background-color: rgba($sm-outer-bg-color, $sm-outer-bg-opacity);
+  outline: 0 none;
+  z-index: $sm-z-index;
 }
 
-.sm-close {
-  position: absolute;
-  right: $space*2.5;
-  top: $space*2.5;
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-  color: $black;
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-
-$sm-space-big: $space*10;
-$sm-space-small: $space*5;
-
-.sm-wrapper {
+.js-smsm-wrapper {
   box-sizing: border-box;
   position: relative;
   top: 50%;
   transform: translateY(-50%);
-  width: 90%;
-  max-height: 90%;
-  max-width: 600px;
+  max-height: $sm-outer-height * 1%;
+  width: $sm-outer-width * 1%;
+  max-width: $sm-width;
   margin-left: auto;
   margin-right: auto;
-  padding: $sm-space-big;
-  background-color: $white;
-  border-radius: 3px;
-  box-shadow: 0 0 5px rgba($black, 0.33);
+  padding: $sm-padding 0 $sm-padding $sm-padding;
+  background-color: $sm-bg-color;
 }
 
-.sm-inner {
+.js-smsm-inner {
+  max-height: calc(#{$sm-outer-height}vh - #{$sm-padding*2});
+  padding-right: $sm-padding;
   overflow: auto;
-  max-height: calc(90vh - #{$sm-space-big*2});
+}
+
+.js-smsm-close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: $sm-close-size;
+  height: $sm-close-size;
+  background-color: $sm-bg-color;
+  cursor: pointer;
+  z-index: 2;
 }
