@@ -97,7 +97,7 @@ SM version 1.0
   overflow: auto;
 }
 
-@media only screen and (max-width: 899px) {
+@media (hover: none) {
   .js-smsm-inner {
     max-height: calc(var(--smvh, 1vh)*90 - 40px);
   }

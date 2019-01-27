@@ -124,7 +124,7 @@ $sm-z-index: 999;
   padding-right: $sm-padding;
   overflow: auto;
 
-  @media only screen and (max-width: 899px) {
+  @media (hover: none) {
     max-height: calc(var(--smvh, 1vh)*#{$sm-outer-height} - #{$sm-padding*2});
   }
 }

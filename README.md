@@ -12,6 +12,7 @@ based on JavaScript and CSS
 * unlimited modals on the same page
 * keyboard navigation
 * accessibility
+* no flexbox
 * no JavaScript graceful degradation
 
 ### How to use:
