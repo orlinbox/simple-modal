@@ -21,6 +21,7 @@ SM version 1.0
   // open with mouse
   $('.js-sm-open').click(function() {
     if (!$(this).hasClass('js-sm-opener')) {
+      // duplicate code - 2 lines !!!
       var content = $('.js-sm-content', $(this).parents('.js-simple-modal')).addClass('js-sm-placeholder').contents();
       opensm(content, $(this).addClass('js-sm-opener').attr('data-modal-label'));
     }
@@ -28,6 +29,7 @@ SM version 1.0
   // open with keyboard
   $('.js-sm-open').on('keydown', function(e) {
     if (e.key == 'Enter' && !$(this).hasClass('js-sm-opener')) {
+      // duplicate code - 2 lines !!!
       var content = $('.js-sm-content', $(this).parents('.js-simple-modal')).addClass('js-sm-placeholder').contents();
       opensm(content, $(this).addClass('js-sm-opener').attr('data-modal-label'));
       // focus
